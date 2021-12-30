@@ -1,15 +1,18 @@
 import { Card } from "antd";
 
-const { Meta } = Card;
-
 const CardGeneral = ({ onClick, description, id }) => {
   return (
     <Card
       onClick={() => onClick(id)}
-      style={{ maxHeight: "100%", maxWidth: "100%" }}
+      style={{
+        maxHeight: "100%",
+        maxWidth: "100%",
+        color: "white",
+        background: "rgb(71 74 73)",
+      }}
       hoverable
     >
-      <Meta title={description} />
+      {description}
     </Card>
   );
 };
