@@ -3,23 +3,20 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-const Tags = ({ content, title }) => {
+const Tags = ({ content, title, paragraph }) => {
   const contentKeys = Object.keys(content).splice(2);
   const contentValues = Object.values(content).splice(2);
 
-  const n = {
-    name: "nombre",
-  };
-
   return (
     <>
-      <Title level={3}> {title}</Title>
+      {title && <Title level={2}> {title}</Title>}
+      {paragraph && <Title level={4}> </Title>}
       <Row gutter={[16, 16]}>
         {contentKeys.map((keys, i) => {
           return (
-            <Col xs={6} key={i}>
-              <Tag color="red">
-                {n[keys] || keys} : {contentValues[i]}
+            <Col xs={12} key={i}>
+              <Tag color="red" style={{ marginBottom: "1em" }}>
+                {keys} : {contentValues[i]}
               </Tag>
             </Col>
           );
