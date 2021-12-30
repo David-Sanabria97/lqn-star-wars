@@ -6,6 +6,7 @@ import { GET_PERSON_FILMS } from "../../services/queries";
 import Tags from "../../components/Tags";
 import Title from "antd/lib/typography/Title";
 import PlanetInformation from "./PlanetInformation";
+import { Fragment } from "react";
 
 const FilmsInformation = ({}) => {
   const router = useRouter();
@@ -21,10 +22,10 @@ const FilmsInformation = ({}) => {
       <Title level={2}> Peliculas</Title>
       {information.map((film) => {
         return (
-          <>
+          <Fragment key={film.id}>
             <Tags content={film} paragraph={film.title} />
             <PlanetInformation id={film.id} />
-          </>
+          </Fragment>
         );
       })}
     </>
