@@ -16,7 +16,7 @@ const PlanetInformation = ({ id }) => {
     <>
       <Title level={5}> Planetas</Title>
       {information.map((film) => {
-        return <Tags content={film} paragraph={film.name} />;
+        return <Tags content={film} paragraph={film.name} key={film.id} />;
       })}
     </>
   );
