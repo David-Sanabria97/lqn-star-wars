@@ -13,7 +13,9 @@ const PersonalInfomation = ({}) => {
   if (error) return <Empty />;
 
   const person = data?.person;
-  return <Tags content={person} title={"Información personal"} />;
+  return (
+    <Tags color={"green"} content={person} title={"Información personal"} />
+  );
 };
 
 export default PersonalInfomation;

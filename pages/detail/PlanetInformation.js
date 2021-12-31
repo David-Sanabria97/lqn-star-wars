@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Empty, Spin } from "antd";
+import { Empty, Row, Spin, Col } from "antd";
 
 import { GET_PLANETS_FILM_ } from "../../services/queries";
 import Tags from "../../components/Tags";
@@ -14,10 +14,23 @@ const PlanetInformation = ({ id }) => {
   const information = data.film.planetConnection.planets;
   return (
     <>
-      <Title level={5}> Planetas</Title>
-      {information.map((film) => {
-        return <Tags content={film} paragraph={film.name} key={film.id} />;
-      })}
+      <Title level={5} style={{ paddingTop: "1em" }}>
+        Planetas
+      </Title>
+      <Row>
+        {information.map((film) => {
+          return (
+            <Col xs={24} sm={12}>
+              <Tags
+                color={"red"}
+                content={film}
+                paragraph={film.name}
+                key={film.id}
+              />
+            </Col>
+          );
+        })}
+      </Row>
     </>
   );
 };
