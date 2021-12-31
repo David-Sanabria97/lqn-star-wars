@@ -1,6 +1,5 @@
 import { Tag, Col, Row } from "antd";
 import { Typography } from "antd";
-import { Fragment } from "react";
 
 const { Title } = Typography;
 

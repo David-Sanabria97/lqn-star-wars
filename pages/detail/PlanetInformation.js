@@ -20,13 +20,8 @@ const PlanetInformation = ({ id }) => {
       <Row>
         {information.map((film) => {
           return (
-            <Col xs={24} sm={12}>
-              <Tags
-                color={"red"}
-                content={film}
-                paragraph={film.name}
-                key={film.id}
-              />
+            <Col xs={24} sm={12} key={film.id}>
+              <Tags color={"red"} content={film} paragraph={film.name} />
             </Col>
           );
         })}
